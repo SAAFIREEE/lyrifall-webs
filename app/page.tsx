@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
@@ -28,7 +29,7 @@ const skillClusters = [
   },
   {
     title: "Infrastructure Quality",
-    items: ["Lavalink w4", "Active Dev Core", "Zero Buffering"],
+    items: ["Lavalink v4", "Active Dev Core", "Zero Buffering"],
     copy: "Built over highly performant modern web frameworks to guarantee instant processing loop execution states."
   }
 ];
@@ -124,7 +125,7 @@ export default function Home() {
       {/* PREMIUM TECH MATRIX GRID BACKGROUND LAYER */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_46%,#000_70%,transparent_100%)] pointer-events-none z-0 mix-blend-screen" />
 
-      {/* LIVING ORBITAL AURORAS (Animated shifting ambient background clouds) */}
+      {/* LIVING ORBITAL AURORAS */}
       <motion.div 
         animate={{
           x: [0, 40, -20, 0],

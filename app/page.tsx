@@ -11,7 +11,7 @@ import {
   Disc,
   Radio
 } from "lucide-react";
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const navItems = ["Features", "Specs", "Modules", "Commands"];
 
@@ -110,26 +110,21 @@ export default function Home() {
   }, []);
 
   return (
-    /* FIXED: Changed to overflow-x-hidden so navigating anchor items won't break scrolling functionality */
     <main className="relative overflow-x-hidden min-h-screen bg-[#050607]">
       <CursorLight />
       <div className="noise" />
       
-      {/* BRANDING BACKGROUND GRADIENTS (Matching your cosmic dark/purple/cyan banner theme) */}
       <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[50%] rounded-full bg-cyan-500/10 blur-[140px] pointer-events-none" />
       <div className="absolute top-[15%] right-[-5%] w-[50%] h-[60%] rounded-full bg-purple-600/10 blur-[160px] pointer-events-none" />
       <div className="absolute bottom-[10%] left-[20%] w-[45%] h-[45%] rounded-full bg-blue-600/5 blur-[130px] pointer-events-none" />
 
-      {/* Floating Decorative Music Notes */}
       <div className="absolute top-[25%] left-[8%] text-purple-500/20 text-3xl font-mono pointer-events-none select-none animate-bounce">♫</div>
       <div className="absolute top-[40%] right-[12%] text-cyan-500/15 text-4xl font-mono pointer-events-none select-none animate-pulse delay-75">♪</div>
       <div className="absolute bottom-[30%] left-[15%] text-blue-500/10 text-2xl font-mono pointer-events-none select-none animate-bounce delay-150">𝅘𝅥𝅯</div>
 
-      {/* Navigation Bar */}
       <div className="fixed inset-x-0 top-0 z-40 border-b border-white/5 bg-[#050607]/60 backdrop-blur-2xl">
         <nav className="mx-auto flex h-16 w-[min(1120px,calc(100%-40px))] items-center justify-between">
           <a href="#hero" className="font-mono text-sm tracking-widest uppercase text-white flex items-center gap-2.5 font-bold">
-            {/* FIXED: Added aspect ratio properties to guarantee your custom asset stays rounded and un-squished */}
             <img 
               src="/logo.png" 
               alt="Lyrifall" 
@@ -151,15 +146,12 @@ export default function Home() {
         </nav>
       </div>
 
-      {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center pt-32 pb-16">
         <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_50%_45%,rgba(168,85,247,0.12),transparent_32rem)]" />
         
-        {/* Adjusted padding parameters to vertically isolate elements gracefully below menu lines */}
         <div className="section-shell z-10 w-full flex items-center justify-center pt-12 lg:pt-20">
           <div className="grid w-full items-center gap-16 lg:grid-cols-[1.12fr_0.88fr]">
             
-            {/* Left Content Area */}
             <div className="relative z-10 text-center lg:text-left">
               <motion.div className="gsap-soft eyebrow mb-5 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.02] border border-white/10">
                 <Sparkles className="h-3.5 w-3.5 text-[#7de3ff]" />
@@ -192,7 +184,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Content Area: Sleek Dynamic Discord Widget Dashboard */}
             <div className="relative z-10 flex justify-center items-center">
               <motion.div 
                 className="glass w-full max-w-[400px] rounded-2xl p-6 relative overflow-hidden bg-[#0c0e12]/60 backdrop-blur-xl border-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.6)]"
@@ -200,7 +191,6 @@ export default function Home() {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
               >
-                {/* Simulated Discord Top Window Elements */}
                 <div className="flex gap-1.5 mb-5 border-b border-white/5 pb-3 items-center">
                   <span className="w-2.5 h-2.5 rounded-full bg-red-500/30" />
                   <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/30" />
@@ -210,7 +200,6 @@ export default function Home() {
                   </span>
                 </div>
 
-                {/* Main Media Panel Box */}
                 <div className="flex items-center gap-4 mb-5">
                   <img src="/logo.png" alt="Lyrifall Player" className="w-14 h-14 rounded-xl border border-purple-500/30 shadow-md object-cover" />
                   <div className="text-left">
@@ -220,7 +209,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* System Status Indicators */}
                 <div className="space-y-2.5 font-sans my-5 border-l-2 border-purple-500/30 pl-4 py-0.5 text-left bg-white/[0.01] p-3 rounded-r-xl border-y border-r border-white/[0.02]">
                   <p className="text-xs text-neutral-300 flex items-center gap-2 font-light">
                     <span className="w-1 h-1 rounded-full bg-purple-400" /> Embedded system array active via <code className="text-[11px] font-mono text-[#7de3ff]">/embed create</code>
@@ -230,7 +218,6 @@ export default function Home() {
                   </p>
                 </div>
 
-                {/* Animated Track Progress Grid */}
                 <div className="mt-5 space-y-1.5">
                   <div className="h-1 w-full bg-white/10 rounded-full overflow-hidden">
                     <motion.div 
@@ -242,7 +229,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Bottom Spec Details Footer */}
                 <div className="mt-5 pt-4 border-t border-white/5 flex justify-between items-center text-[10px] font-mono text-neutral-500 tracking-wider">
                   <span className="flex items-center gap-1"><Terminal className="w-3 h-3 text-purple-400" /> INTERACTION: NATIVE</span>
                   <span className="flex items-center gap-1"><Waves className="w-3 h-3 text-cyan-400" /> VERIFIED APPS</span>
@@ -254,11 +240,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Grid */}
       <section id="features" className="relative scroll-mt-16">
         <div className="section-shell">
           <div className="mb-12 text-center lg:text-left">
-            <p className="eyebrow">// INTEGRATED CAPABILITIES</p>
+            <p className="eyebrow">SYSTEM PHILOSOPHY</p>
             <h2 className="mt-4 max-w-3xl text-3xl font-bold tracking-tight text-white md:text-5xl">
               A comprehensive suite tailored with structural restraint.
             </h2>
@@ -287,12 +272,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Operational Specifications Component */}
       <section id="specs" className="relative scroll-mt-16">
         <div className="section-shell">
           <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
             <div className="text-center lg:text-left">
-              <p className="eyebrow">// OPERATIONAL SPECS</p>
+              <p className="eyebrow">OPERATIONAL SPECS</p>
               <h2 className="mt-4 text-3xl font-bold tracking-tight text-white md:text-5xl">
                 Configured strictly around modern API frameworks.
               </h2>
@@ -327,12 +311,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Module Matrix Cards View */}
       <section id="modules" className="relative scroll-mt-16">
         <div className="section-shell">
           <div className="mb-12 flex flex-col justify-between gap-4 lg:flex-row lg:items-end text-center lg:text-left">
             <div>
-              <p className="eyebrow">// GRAPHICAL DESIGN PILLARS</p>
+              <p className="eyebrow">GRAPHICAL DESIGN PILLARS</p>
               <h2 className="mt-4 text-3xl font-bold tracking-tight text-white md:text-5xl">
                 System Modules
               </h2>
@@ -349,11 +332,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Native Slash Command Protocol Registry */}
       <section id="commands" className="relative scroll-mt-16">
         <div className="section-shell pb-32">
           <div className="mb-12 text-center lg:text-left">
-            <p className="eyebrow">// NATIVE DISCORD COMMAND PROTOCOLS</p>
+            <p className="eyebrow">NATIVE DISCORD COMMAND PROTOCOLS</p>
             <h2 className="mt-4 text-3xl font-bold tracking-tight text-white md:text-5xl">
               Slash Application Registry
             </h2>
@@ -364,7 +346,7 @@ export default function Home() {
               <table className="w-full text-left border-collapse text-xs sm:text-sm">
                 <thead>
                   <tr className="bg-white/[0.01] border-b border-white/5 font-mono text-[11px] text-neutral-400 tracking-wider">
-                    <th className="p-5 pl-6 uppercase font-normal">Command URI</th>
+                    <th className="p-5 p1-6 uppercase font-normal">Command URI</th>
                     <th className="p-5 uppercase font-normal">Parameter Function Scope</th>
                     <th className="p-5 pr-6 uppercase font-normal text-right">Native Invocation</th>
                   </tr>
@@ -379,7 +361,7 @@ export default function Home() {
                     ["/active-dev-badge", "Executes a lightning-fast validation handshake responder sequence to systematically secure the official Discord Active Developer tier credential.", "/active-dev-badge"]
                   ].map(([uri, scope, invocation]) => (
                     <tr className="hover:bg-white/[0.01] transition-colors" key={uri}>
-                      <td className="p-5 pl-6 font-mono text-cyan-400 font-semibold text-xs">{uri}</td>
+                      <td className="p-5 p1-6 font-mono text-cyan-400 font-semibold text-xs">{uri}</td>
                       <td className="p-5 text-neutral-400 leading-relaxed text-xs max-w-sm">{scope}</td>
                       <td className="p-5 pr-6 font-mono text-neutral-500 text-xs text-right select-all">{invocation}</td>
                     </tr>
@@ -391,7 +373,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer Element */}
       <footer className="border-t border-white/5 py-8 text-center text-[10px] text-neutral-600 tracking-widest uppercase font-mono">
         <p>&copy; {new Date().getFullYear()} Lyrifall Ecosystem // All Rights Reserved.</p>
       </footer>
@@ -399,7 +380,7 @@ export default function Home() {
   );
 }
 
-function TiltProject({ project, index }: { project: any; index: number }) {
+function TiltProject({ project, index }: { project: (typeof projects)[number]; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
